@@ -19,16 +19,20 @@ function Main() {
   }
 
   return (
-    <main>
-      <form>
-        <input type='text' onChange={changeFirstText} />
-        <input type='text' onChange={changeSecondText} />
-        <button>Get a new meme image 🖼</button>
-        <img
-          src='https://sungmo.jjong.co.kr/images/sungmo.png'
-          alt='k-meme-img'
+    <main className='main'>
+      <section className='main--input_section'>
+        <input className='main--input' type='text' onChange={changeFirstText} />
+        <input
+          className='main--input'
+          type='text'
+          onChange={changeSecondText}
         />
-      </form>
+        <div className='main--btn'>Get a new meme image</div>
+      </section>
+      <img
+        src='https://sungmo.jjong.co.kr/images/sungmo.png'
+        alt='k-meme-img'
+      />
     </main>
   );
 }

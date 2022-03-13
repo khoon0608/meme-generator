@@ -18,7 +18,7 @@
     "build": "yarn sass:build && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass:build": "sass --update src/styles/scss:src/styles/css",
+    "sass": "sass --update src/styles/scss:src/styles/css",
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },

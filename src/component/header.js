@@ -12,7 +12,7 @@ function Header() {
         <span className='header--title'>Meme Generator</span>
       </div>
       <div className='header--column'>
-        <span>React Course - Project 3</span>
+        <span className='header--project_name'>React Course - Project 3</span>
       </div>
     </header>
   );
