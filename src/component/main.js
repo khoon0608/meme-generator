@@ -3,32 +3,51 @@
 import React from "react";
 
 function Main() {
-  const [firstText, setFirstText] = React.useState(
-    "여기에 넣을 문장은 왼쪽 입력창에 쓰세요"
-  );
-  const [secondText, setSecondText] = React.useState(
-    "여기에 넣을 문장은 오른쪽 입력창에 쓰세요."
-  );
+  const [formData, setFormData] = React.useState({
+    topText: "",
+    bottomText: "",
+  });
 
-  function changeFirstText(event) {
-    return setFirstText(event.target.value);
+  let topText = null;
+  let bottomText = null;
+
+  function ChangeHandling(event) {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   }
 
-  function changeSecondText(event) {
-    return setSecondText(event.target.value);
+  function submitHandling(event) {
+    event.preventDefault();
   }
 
   return (
     <main className='main'>
-      <section className='main--input_section'>
-        <input className='main--input' type='text' onChange={changeFirstText} />
+      <form className='main--input_section' onSubmit={submitHandling}>
         <input
           className='main--input'
+          name='topText'
           type='text'
-          onChange={changeSecondText}
+          onChange={ChangeHandling}
+          value={formData.topText}
         />
-        <div className='main--btn'>Get a new meme image</div>
-      </section>
+        <input
+          className='main--input'
+          name='bottomText'
+          type='text'
+          onChange={ChangeHandling}
+          value={formData.bottomText}
+        />
+        <button className='main--btn'>Get a new meme image</button>
+        {formData.topText && (
+          <h1 className='meme-text top'>{formData.topText}</h1>
+        )}
+        {formData.bottomText && (
+          <h1 className='meme-text bottom'>{formData.bottomText}</h1>
+        )}
+      </form>
       <img
         src='https://sungmo.jjong.co.kr/images/sungmo.png'
         alt='k-meme-img'
