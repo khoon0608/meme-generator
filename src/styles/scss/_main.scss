@@ -46,10 +46,42 @@
       }
     }
   }
-  img {
-    margin-top: 20px;
-    width: 660px;
-    height: 550px;
-    z-index: 0;
+  .main--meme {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    img {
+      margin-top: 20px;
+      width: 660px;
+      height: 550px;
+      z-index: -1;
+    }
+
+    .meme--text {
+      position: absolute;
+      width: 80%;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 15px 0;
+      padding: 0 5px;
+      color: black;
+      font-size: 60px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
+        -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000,
+        -2px 0 0 #000, 2px 2px 5px #000;
+    }
+
+    .top {
+      top: 60px;
+      left: 320px;
+    }
+
+    .bottom {
+      bottom: 50px;
+      left: 320px;
+    }
   }
 }

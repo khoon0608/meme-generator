@@ -8,9 +8,6 @@ function Main() {
     bottomText: "",
   });
 
-  let topText = null;
-  let bottomText = null;
-
   function ChangeHandling(event) {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
@@ -41,17 +38,19 @@ function Main() {
           value={formData.bottomText}
         />
         <button className='main--btn'>Get a new meme image</button>
+      </form>
+      <div className='main--meme'>
+        <img
+          src='https://sungmo.jjong.co.kr/images/sungmo.png'
+          alt='k-meme-img'
+        />
         {formData.topText && (
-          <h1 className='meme-text top'>{formData.topText}</h1>
+          <div className='meme--text top'>{formData.topText} </div>
         )}
         {formData.bottomText && (
-          <h1 className='meme-text bottom'>{formData.bottomText}</h1>
+          <div className='meme--text bottom'>{formData.bottomText}</div>
         )}
-      </form>
-      <img
-        src='https://sungmo.jjong.co.kr/images/sungmo.png'
-        alt='k-meme-img'
-      />
+      </div>
     </main>
   );
 }
